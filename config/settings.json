@@ -1,0 +1,75 @@
+{
+  "vector": {
+    "api_url": "http://localhost:8000/v1/embeddings",
+    "model": "text-embedding-3-small",
+    "batch_size": 32,
+    "dimensions": 1536
+  },
+  "qdrant": {
+    "host": "localhost",
+    "port": 6333,
+    "collection_name": "code_context_embeddings"
+  },
+  "neo4j": {
+    "uri": "bolt://localhost:7687",
+    "user": "neo4j",
+    "password": "codecontext123",
+    "database": "neo4j"
+  },
+  "indexer": {
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "max_file_size_mb": 5,
+    "exclude_patterns": [
+      "node_modules/**",
+      ".git/**",
+      "dist/**",
+      "build/**",
+      "*.min.js",
+      "*.min.css",
+      "*.log",
+      ".env",
+      "*.pyc",
+      "__pycache__/**"
+    ],
+    "languages": [
+      "python",
+      "javascript",
+      "typescript",
+      "go",
+      "rust",
+      "java",
+      "cpp",
+      "c",
+      "ruby",
+      "php",
+      "swift",
+      "kotlin"
+    ]
+  },
+  "watcher": {
+    "enabled": true,
+    "debounce_ms": 1000,
+    "auto_index": true
+  },
+  "reranker": {
+    "enabled": true,
+    "api_url": null,
+    "model": "cross-encoder/ms-marco-MiniLM",
+    "top_k": 10
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "debug": true,
+    "workers": 1
+  },
+  "codebase": {
+    "paths": [
+      "/Users/your-name/projects/your-project"
+    ],
+    "watch_paths": [
+      "/Users/your-name/projects/your-project/src"
+    ]
+  }
+}
