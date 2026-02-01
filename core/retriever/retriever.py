@@ -134,7 +134,7 @@ class RetrievalEngine:
                             docstring="",
                             start_line=0,
                             end_line=0,
-                            score=0.5,的基础  # 较低分数
+                            score=0.5,  # 较低分数
                             metadata={"source": "callers"}
                         ))
             

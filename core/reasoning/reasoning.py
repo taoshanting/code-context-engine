@@ -4,7 +4,6 @@
 
 from typing import List, Dict, Optional, Any
 from dataclasses import dataclass, field
-from dataclasses import dataclass
 import asyncio
 import logging
 
@@ -32,8 +31,8 @@ class QueryIntent:
     intent_type: str  # find_implementation, understand_flow, refactor, debug
     target_entity: Optional[str] = None
     target_file: Optional[str] = None
-   ] = None
-    constraints language: Optional[str: List[str] = field(default_factory=list)
+    language: Optional[str] = None
+    constraints: List[str] = field(default_factory=list)
 
 
 class ReasoningEngine:
